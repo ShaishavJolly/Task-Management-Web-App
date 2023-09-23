@@ -63,8 +63,10 @@ The app should now be running on http://localhost:3000.
 - Register for an account or log in if you already have one.
 - Create, manage, and track your tasks on the dashboard.
 - Customize your profile information in the settings.
-- API Endpoints
-- The application provides the following API endpoints for managing tasks and user details:
+
+## API Endpoints
+
+The application provides the following API endpoints for managing tasks and user details:
 
 - POST /api/auth/register: Register a new user.
 - POST /api/auth/login: Log in an existing user.
@@ -76,7 +78,9 @@ The app should now be running on http://localhost:3000.
 - DELETE /api/tasks/:taskId: Delete a specific task by ID.
 - GET /api/user: Fetch user details for the authenticated user.
 - PUT /api/user: Update user details for the authenticated user.
-- Technologies Used
+
+## Technologies Used
+
 - Node.js: Backend server environment.
 - Express.js: Web application framework.
 - MongoDB: Database for storing task and user data.
