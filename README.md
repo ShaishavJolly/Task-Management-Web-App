@@ -1,38 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Manager App
+
+Task Manager App is a web application that allows users to manage their tasks efficiently. It provides features such as task creation, task status tracking, user registration, and authentication.
+
+## Table of Contents
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Technologies Used](#technologies-used)
+
+## Features
+
+- User Registration: Users can create accounts with a valid email address and password.
+- User Authentication: Registered users can log in securely using their credentials.
+- Task Management: Users can create, update, delete, and view their tasks.
+- Task Status Tracking: Tasks can be marked as "To Do," "In Progress," or "Completed."
+- User Profile: Users can view and edit their profile information like username and email.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Node.js and npm installed on your local machine.
+- MongoDB installed and running locally or a remote MongoDB database URI.
+- An active internet connection for fetching dependencies.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+   ```bash
+   git clone https://github.com/your-username/task-manager-app.git
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Change into the project directory:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    ```bash
+    cd task-manager-app
+   
+3. Install dependencies:
 
-## Learn More
+    ```
+    npm install
 
-To learn more about Next.js, take a look at the following resources:
+4. Create a .env file in the project root directory and configure your environment variables. You will need to set variables like MONGODB_URI, JWT_SECRET .Example .env file:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    MONGODB_URI=mongodb://localhost:27017/task-manager
+    JWT_SECRET=your-secret-key
+    COOKIE_SECRET=another-secret-key
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Start your application
 
-## Deploy on Vercel
+    ```bash
+    npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app should now be running on http://localhost:3000.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+
+- Open a web browser and access the application at http://localhost:3000.
+- Register for an account or log in if you already have one.
+- Create, manage, and track your tasks on the dashboard.
+- Customize your profile information in the settings.
+- API Endpoints
+- The application provides the following API endpoints for managing tasks and user details:
+
+- POST /api/auth/register: Register a new user.
+- POST /api/auth/login: Log in an existing user.
+- POST /api/auth/logout: Log out the authenticated user.
+- GET /api/tasks: Fetch all tasks for the authenticated user.
+- POST /api/tasks: Create a new task for the authenticated user.
+- GET /api/tasks/:taskId: Fetch a specific task by ID.
+- PUT /api/tasks/:taskId: Update a specific task by ID.
+- DELETE /api/tasks/:taskId: Delete a specific task by ID.
+- GET /api/user: Fetch user details for the authenticated user.
+- PUT /api/user: Update user details for the authenticated user.
+- Technologies Used
+- Node.js: Backend server environment.
+- Express.js: Web application framework.
+- MongoDB: Database for storing task and user data.
+- Next.js: React framework for building the user interface.
+- Tailwind CSS: CSS framework for styling.
+
+
