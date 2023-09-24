@@ -10,20 +10,12 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function App({ Component, pageProps }) {
 
   const router = useRouter();
-  const [showNavbar, setShowNavbar] = useState(true);
+  const showNavbar = router.pathname === '/login' || router.pathname === '/register' ? false : true
 
   useEffect(() => {
     const isAuthenticated = Cookies.get('token') !== undefined;
     if (!isAuthenticated && router.pathname === '/') {
       router.push('/login');
-    }
-    // Check if the current route is '/login' or '/register'
-    if (router.pathname === '/login' || router.pathname === '/register') {
-      // Hide Navbar on these pages
-      setShowNavbar(false);
-    } else {
-      // Show Navbar on other pages
-      setShowNavbar(true);
     }
 
   }, [router.pathname]);
