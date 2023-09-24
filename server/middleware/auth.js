@@ -10,7 +10,7 @@ const authenticateUser = async (req, res, next) => {
     }
 
     // Verify the token (you may use a try-catch block for this)
-    const decodedToken = jwt.verify(token, `process.env.JWT_SECRET`);
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
     
     // Fetch the user (await the promise)
     const user = await User.findById(decodedToken.user.id);
