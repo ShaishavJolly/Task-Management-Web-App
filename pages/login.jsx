@@ -53,6 +53,7 @@ const LoginForm = () => {
         const result = await response.json()
         if (response.status === 200) {
           showToast('Login successful', 'success');
+          console.log(result)
           router.push("/tasks")
         }
         if (response.status === 400) {

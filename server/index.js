@@ -7,7 +7,7 @@ const cors = require("cors")
 const cookieParser = require('cookie-parser')
 
 app.use(cors({
-    origin: 'https://task-management-web-app-iota.vercel.app',
+    origin: ['http://localhost:3000','https://task-management-web-app-iota.vercel.app'],
     credentials: true
 }))
 app.use(connectMongoDB)
