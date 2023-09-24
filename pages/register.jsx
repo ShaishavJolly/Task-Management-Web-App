@@ -122,6 +122,7 @@ const RegisterForm = () => {
             type="password"
             id="password"
             name="password"
+            autoComplete='on'
             value={formData.password}
             onChange={handleChange}
             className="mt-1 p-2 block w-full border rounded-md bg-gray-100 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -137,6 +138,7 @@ const RegisterForm = () => {
             type="password"
             id="confirmPassword"
             name="confirmPassword"
+            autoComplete='on'
             value={formData.confirmPassword}
             onChange={handleChange}
             className="mt-1 p-2 block w-full border rounded-md bg-gray-100 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"

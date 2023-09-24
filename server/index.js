@@ -1,10 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = 5000;
 const connectMongoDB = require("./middleware/mongodb")
 const cors = require("cors")
 const cookieParser = require('cookie-parser')
-require('dotenv').config();
 
 app.use(cors({
     origin: 'http://localhost:3000',
@@ -17,7 +17,6 @@ app.use(cookieParser())
 const taskRoute = require("./routes/tasks");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
-const { connect } = require('mongoose');
 
 app.use('/api/tasks', taskRoute)
 app.use('/api/auth', authRoute)

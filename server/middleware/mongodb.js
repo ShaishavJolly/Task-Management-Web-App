@@ -1,8 +1,13 @@
-const { configDotenv } = require("dotenv");
 const mongoose = require("mongoose")
-require('dotenv').config
 
-mongoURI = 'mongodb://127.0.0.1:27017/taskManager'
+// mongoURI = 'mongodb://127.0.0.1:27017/taskManager'
+const databaseName = process.env.DBNAME
+const databaseUser = process.env.DBUSER
+const databasePassword = process.env.DBPASS
+
+const mongoURI = 'mongodb+srv://shaishavjolly2003:Shavjoll%402003@cluster0.crpysbc.mongodb.net/taskManager'
+
+// const mongoURI = `mongodb+srv://${databaseUser}:${databasePassword}@cluster0.crpysbc.mongodb.net/${databaseName}`
 
 const connectMongoDB = async (req,res,next)=>{
     try {
@@ -15,7 +20,6 @@ const connectMongoDB = async (req,res,next)=>{
         }
         next()
     } catch (error) {
-        // console.error("MongoDB connection error", error)
         next(error)
     }
 }
