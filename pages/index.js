@@ -6,11 +6,9 @@ export default function Home({isAuthenticated}) {
   useEffect(()=>{
     if(!isAuthenticated){
       router.push('/login')
-      console.log('if')
     }
     else{
       router.push('/tasks')
-      console.log('else')
     }
   },[router.query])
   return (
